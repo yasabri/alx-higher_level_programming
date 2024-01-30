@@ -18,7 +18,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get/set the width of the Rectangle."""
+        """Get or set the width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -31,7 +31,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get or set height of the Rectangle."""
+        """Get or set the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -43,7 +43,7 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """the return area of Rectangle"""
+        """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
@@ -53,7 +53,7 @@ class Rectangle:
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """the Return printable representation of Rectangle
+        """the return printable representation of the Rectangle.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -66,13 +66,13 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
-        """the return string representation of Rectangle."""
+        """the return string representation of Rectangle"""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
     def __del__(self):
-        """ message that printed when every deletion of a Rectangle."""
+        """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
