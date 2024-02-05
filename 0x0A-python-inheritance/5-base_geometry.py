@@ -9,4 +9,3 @@ class BaseGeometry:
     A barren classroom
     """
     pass
-
