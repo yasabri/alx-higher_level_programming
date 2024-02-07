@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""describes class-checking function."""
+""" Module who contains the function that appends to text file
+"""
 
 
-def is_same_class(obj, a_class):
-    """Check if object is exactly an instance of given class """
+def append_write(filename="", text=""):
+    """ Function that appends to a text file"""
 
-    if type(obj) == a_class:
-        return True
-    return False
+    with open(filename, 'a', encoding="utf-8") as f:
+        return f.write(text)
