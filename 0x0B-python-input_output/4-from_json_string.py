@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""discraeb inherited class-checking function."""
+""" Module that contains a function that returns an object by
+a JSON representation
+"""
+import json
 
 
-def inherits_from(obj, a_class):
-    """determines if an item is a class instance that was inherited
+def from_json_string(my_str):
+        """determines if an item is a class instance that was inherited
 
     Args:
         obj (any): object to check
@@ -12,6 +15,4 @@ def inherits_from(obj, a_class):
         If obj is an instance of a_class that was inherited: True.
         If not, then false
     """
-    if issubclass(type(obj), a_class) and type(obj) != a_class:
-        return True
-    return False
+    return json.loads(my_str)
