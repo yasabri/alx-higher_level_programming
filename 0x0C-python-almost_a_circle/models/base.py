@@ -7,7 +7,10 @@ import turtle
 
 
 class Base:
-    """
+    """Base model.
+
+    This Represents the "base" for all other classes in project 0x0C*.
+
     Private Class Attributes:
         __nb_object (int): Number of instantiated Bases.
     """
@@ -15,7 +18,10 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize a new Base
+        """Initialize a new Base.
+
+        Args:
+            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -65,7 +71,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Provide a class that has been instantiated from an attribute dictionary.
+        """Return a class instantied from a dictionary of attributes.
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
@@ -80,13 +86,13 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Provide back a list of classes that have been instantiated from a JSON text file.
+        """Return a list of classes instantiated from a file of JSON strings.
 
         Reads from `<cls.__name__>.json`.
 
         Returns:
-            An empty list appears if the file is not present.
-            A list of instantiated classes, otherwise.
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
         filename = str(cls.__name__) + ".json"
         try:
@@ -98,7 +104,10 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Write a list of objects' CSV serialization to a file.
+        """Write the CSV serialization of a list of objects to a file.
+
+        Args:
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -115,7 +124,13 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Provide a list of the classes that were instantiated from a CSV file.
+        """Return a list of classes instantiated from a CSV file.
+
+        Reads from `<cls.__name__>.csv`.
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
         try:
@@ -136,8 +151,8 @@ class Base:
         """Draw Rectangles and Squares using the turtle module.
 
         Args:
-            a list of Rectangle objects to render is stored in list_rectangles (list).
-            a list of square objects to draw is represented by list_squares (list).
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
@@ -169,4 +184,5 @@ class Base:
                 turt.forward(sq.height)
                 turt.left(90)
             turt.hideturtle()
+
         turtle.exitonclick()
