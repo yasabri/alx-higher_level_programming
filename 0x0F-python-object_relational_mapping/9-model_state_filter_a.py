@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" 
-displays the database's first State object, hbtn_0e_6_usa.
+""" make a first State object from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
