@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-function that finds peak in list of unsorted int
+function that scans an unsorted integer list for peaks.
 """
 
 
 def find_peak(list_of_integers):
     """
-    Return peak in list of unsorted int
+    Return a peak in a list of unsorted integers
     """
     if len(list_of_integers) == 0:
         return None
